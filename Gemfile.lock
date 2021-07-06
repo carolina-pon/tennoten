@@ -66,6 +66,7 @@ GEM
       activerecord (>= 3.2, < 7.0)
       rake (>= 10.4, < 14.0)
     ast (2.4.2)
+    bcrypt (3.1.16)
     better_errors (2.9.1)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -110,7 +111,7 @@ GEM
     marcel (1.0.1)
     method_source (1.0.0)
     mini_mime (1.0.3)
-    mini_portile2 (2.5.1)
+    mini_portile2 (2.5.3)
     minitest (5.14.4)
     msgpack (1.4.2)
     mysql2 (0.5.3)
@@ -213,6 +214,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    semantic-ui-sass (2.4.4.0)
+      sassc
     semantic_range (3.0.0)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
@@ -261,6 +264,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller
   bootsnap (>= 1.4.4)
@@ -281,6 +285,7 @@ DEPENDENCIES
   ruby-graphviz
   sass-rails (>= 6)
   selenium-webdriver
+  semantic-ui-sass
   slim-rails
   spring
   tzinfo-data
