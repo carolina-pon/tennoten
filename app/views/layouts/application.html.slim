@@ -9,11 +9,11 @@ html
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
   body
-    .ui.container
-    - if current_user.nil?
-      = render 'shared/before_login_header'
-    - else
-      = render 'shared/header'
-    - flash.each do |name, msg|
-      = content_tag :div, msg, class: name
+  - if current_user.nil?
+    = render 'shared/before_login_header'
+  - else
+    = render 'shared/header'
+  - flash.each do |name, msg|
+    = content_tag :div, msg, class: name
+  .ui.container
     = yield

@@ -1,0 +1,11 @@
+  = form_with model: @author,local: true do |f|
+    .ui.form.field
+      = f.label :name, '作者名'
+      = f.text_field :name, id: 'author_name'
+    .ui.form.field
+      = f.label :site, '活動拠点'
+      = f.text_field :site, id: 'author_site'
+    .ui.form.field
+      = f.label :sns, 'SNS（URL）'
+      = f.text_field :sns, id: 'author_sns'
+    = f.submit '投稿する',class: 'ui primary button'
