@@ -1,4 +1,12 @@
 h1 作者一覧
 
 = link_to '作者追加', new_author_path, class: 'ui primary button'
-= render 'authors'
+table.ui.celled.table
+  thead
+    tr
+      th= '作者名'
+      th= '拠点'
+      th= 'SNS'
+      th=
+      tbody
+        = render @authors
