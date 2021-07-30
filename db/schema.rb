@@ -10,9 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_07_073913) do
+ActiveRecord::Schema.define(version: 2021_07_18_101421) do
 
-  create_table "authors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "authors", force: :cascade do |t|
     t.string "name", null: false
     t.string "site", null: false
     t.string "sns"
@@ -21,13 +24,24 @@ ActiveRecord::Schema.define(version: 2021_07_07_073913) do
     t.index ["name"], name: "index_authors_on_name", unique: true
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
     t.string "password_digest", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "works", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description", null: false
+    t.string "size"
+    t.string "weight"
+    t.string "material", null: false
+    t.string "images", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
