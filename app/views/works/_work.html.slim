@@ -1,0 +1,13 @@
+/ https://pikawaka.com/rails/partial_template 
+/ 参考 each回さなくても、partialで要素分を表示できる。パフォーマンス◎
+
+.card
+  - work.images.each do |image|
+    = image_tag image.url
+      / サムネ画像のサイズ指定したい
+  .content
+    = link_to work_path(work) do
+      .header= work.title
+    .meta= 'hanako yamada'
+
+    

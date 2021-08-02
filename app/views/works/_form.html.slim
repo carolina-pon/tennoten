@@ -1,0 +1,20 @@
+  = form_with model: @work,local: true do |f|
+    .ui.form.field
+      = f.label :title, 'タイトル'
+      = f.text_field :title, id: 'works_title'
+    .ui.form.field
+      = f.label :description, '詳細文'
+      = f.text_area :description, id: 'works_description'
+    .ui.form.field
+      = f.label :material, '素材'
+      = f.text_field :material, id: 'works_material'
+    .ui.form.field
+      = f.label :size, 'サイズ'
+      = f.text_field :size, id: 'works_size'
+    .ui.form.field
+      = f.label :weight, '重さ'
+      = f.text_field :weight, id: 'works_weight'
+    = f.file_field :images, multiple: true
+    - @work.images.each do |image|
+      = image_tag image.url, size: '100x100'
+    = f.submit '投稿する',class: 'ui primary button'

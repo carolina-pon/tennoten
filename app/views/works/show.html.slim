@@ -1,0 +1,30 @@
+.ui.segment
+  - @work.images.each do |image|
+    = image_tag image.url, class: "ui centered medium image"
+
+.ui.grid
+  .four.wide.column
+    th= 'タイトル'
+  .ten.wide.column
+    td= @work.title
+  .four.wide.column
+    th= '素材'
+  .ten.wide.column
+    td= @work.material
+  .four.wide.column
+    th= 'サイズ'
+  .ten.wide.column
+    td= @work.size
+  .four.wide.column
+    th= '重さ'
+  .ten.wide.column
+    td= @work.weight
+  .four.wide.column
+    th= '詳細文'
+  .ten.wide.column
+    td= @work.description
+  .four.wide.column
+    th
+      = link_to '編集', edit_work_path(@work), class: 'ui primary button'
+      = link_to '削除', work_path(@work), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'ui red button'
+
