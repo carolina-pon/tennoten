@@ -2,12 +2,14 @@ doctype html
 html
   head
     title
-      | Tennoten
+      | 点の展オンラインギャラリーサイト
     meta[name="viewport" content="width=device-width,initial-scale=1"]
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
+    link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css"
+    link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"
   body
   - if current_user.nil?
     = render 'shared/before_login_header'
@@ -17,3 +19,4 @@ html
     = content_tag :div, msg, class: name
   .ui.container
     = yield
+
