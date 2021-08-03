@@ -1,0 +1,16 @@
+/ https://pikawaka.com/rails/partial_template 
+/ 参考 each回さなくても、partialで要素分を表示できる。パフォーマンス◎
+
+.card
+  .swiper-container
+    .swiper-wrapper
+      - work.images.each do |image|
+        .swiper-slide
+          = image_tag image.url
+    .swiper-pagination
+  .content
+    = link_to work_path(work) do
+      .header= work.title
+    .meta= 'hanako yamada'
+
+= render 'shared/swiper'
