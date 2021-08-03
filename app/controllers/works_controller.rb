@@ -15,7 +15,7 @@ class WorksController < ApplicationController
       flash.now[:alert] = '投稿に失敗しました'
       render :new
     end
-    end
+  end
 
   def edit
     @work = Work.find(params[:id])
@@ -34,7 +34,6 @@ class WorksController < ApplicationController
   def show
     @work = Work.find(params[:id])
   end
-
 
   def destroy
     @work = Work.find(params[:id])
