@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :authors, only: %i[index new create edit update destroy]
   resources :works
   resources :greetings, only: %i[index]
+  resources :categories, only: %i[index new create edit update destroy]
 end
