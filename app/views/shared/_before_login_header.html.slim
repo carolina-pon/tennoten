@@ -1,5 +1,6 @@
-.ui.container.secondary.menu
+.ui.container.secondary.menu.background
   .item
-    h3= link_to '点の展', root_path
+    h1
+     = link_to '点の展', root_path, class: "tennoten-white"
   .item
-    = link_to 'ログイン', login_path
+    = link_to 'ご挨拶', greetings_path, class: "tennoten-white"

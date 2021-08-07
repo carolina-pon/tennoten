@@ -1,8 +1,8 @@
-.ui.container.secondary.menu
+.ui.container.secondary.menu.background
   .item
-    h3= link_to '点の展', root_path
-  .item
-    = link_to 'ログイン', login_path
-  .item
-    = link_to 'ログアウト', logout_path, method: :delete
-  
+    h1.tennoten
+      = link_to '点の展', root_path, class: "tennoten-white"
+  .item.tennoten
+    = link_to 'ご挨拶', greetings_path, class: "tennoten-white"
+  .item.tennoten
+    = link_to 'ログアウト', logout_path, method: :delete, class: "tennoten-white"

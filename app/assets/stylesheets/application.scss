@@ -4,3 +4,29 @@
   height: 300px;
   width: 100%;
   }
+
+.background {
+  background-image: image-url('header.png') !important;
+  height: 200px;
+}
+
+.tennoten {
+  font-family: ten-mincho, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tennoten-white {
+  color: rgb(255, 255, 255) !important;
+  font-family: ten-mincho, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.footer{
+  margin-top: 200px;
+}
+
+.bold {
+  font-weight: bold;
+}

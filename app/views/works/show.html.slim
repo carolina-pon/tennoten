@@ -1,34 +1,56 @@
+.ui.right.aligned.stackable.grid
+  .sixteen.wide.column
+    = link_to "http://twitter.com/share?url=#{request.url}/&text=作品タイトル「#{@work.title}」・作者「山田花子」/&hashtags=点の展" do
+      i class="large twitter black icon"
+      
 .ui.segment
-     .swiper-container
-      .swiper-wrapper
-        - @work.images.each do |image|
-          .swiper-slide
-            = image_tag image.url, class: "ui centered medium image"
-      .swiper-pagination
-.ui.grid
-  .four.wide.column
-    th= 'タイトル'
-  .ten.wide.column
-    td= @work.title
-  .four.wide.column
-    th= '素材'
-  .ten.wide.column
-    td= @work.material
-  .four.wide.column
-    th= 'サイズ'
-  .ten.wide.column
-    td= @work.size
-  .four.wide.column
-    th= '重さ'
-  .ten.wide.column
-    td= @work.weight
-  .four.wide.column
-    th= '詳細文'
-  .ten.wide.column
-    td= @work.description
-  .four.wide.column
-    th
-      = link_to '編集', edit_work_path(@work), class: 'ui primary button'
-      = link_to '削除', work_path(@work), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'ui red button'
-
+  .swiper-container
+    .swiper-wrapper
+      - @work.images.each do |image|
+        .swiper-slide
+          = image_tag image.url, class: "ui centered medium image"
+    .swiper-pagination
+.ui.stackable.vertically.divided.grid
+  .row
+    .four.wide.column
+      th= '作品タイトル'
+    .ten.wide.column
+      td= @work.title
+  .row
+    .four.wide.column
+      th= '作者名'
+    .ten.wide.column
+      td= '山田　花子'
+  .row
+    .four.wide.column
+      th= '素材'
+    .ten.wide.column
+      td= @work.material
+  .row
+    .four.wide.column
+      th= 'サイズ'
+    .ten.wide.column
+      td= @work.size
+  .row
+    .four.wide.column
+      th= '重さ'
+    .ten.wide.column
+      td= @work.weight
+  .row
+    .four.wide.column
+      th= 'カテゴリー'
+    .ten.wide.column
+      td
+      - @work.categories.each do |category|
+        = category.name
+  .row
+    .four.wide.column
+      th= '詳細文'
+    .ten.wide.column
+      td= @work.description
+  - if current_user
+    .four.wide.column
+      th
+        = link_to '編集', edit_work_path(@work), class: 'ui primary button'
+        = link_to '削除', work_path(@work), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'ui red button'
 = render 'shared/swiper'
