@@ -22,7 +22,7 @@ class Work < ApplicationRecord
   serialize :images, JSON
   validates :images, presence: true
 
-  has_many :work_categories,dependent: :destroy
+  has_many :work_categories, dependent: :destroy
   has_many :categories, through: :work_categories
 
   accepts_nested_attributes_for :work_categories, allow_destroy: true
