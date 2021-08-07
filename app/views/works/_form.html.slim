@@ -14,7 +14,15 @@
     .ui.form.field
       = f.label :weight, '重さ'
       = f.text_field :weight, id: 'works_weight'
+    = 'カテゴリー'
+    br
+    = collection_check_boxes(:work, :category_ids, Category.all, :id, :name ) do |t|
+      = t.label { t.check_box + t.text }
+    .ui.divider
+    = '作品画像'
+    br
     = f.file_field :images, multiple: true
     - @work.images.each do |image|
       = image_tag image.url, size: '100x100'
+    .ui.divider
     = f.submit '投稿する',class: 'ui primary button'

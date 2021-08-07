@@ -1,3 +1,4 @@
-= link_to '作品投稿', new_work_path, class: 'ui primary button'
-.ui.link.cards
+- if current_user
+  = link_to '作品投稿', new_work_path, class: 'ui primary button'
+.ui.center.aligned.stackable.grid.link.cards
   = render @works

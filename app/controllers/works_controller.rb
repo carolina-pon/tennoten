@@ -1,4 +1,6 @@
 class WorksController < ApplicationController
+  skip_before_action :login_required, only: %i[index show]
+
   def index
     @works = Work.all
   end
@@ -45,6 +47,6 @@ class WorksController < ApplicationController
 
   def work_params
     # images:[] とすることで、JSON形式でparamsを受け取れる
-    params.require(:work).permit(:title, :description, :material, :size, :weight, images: [])
+    params.require(:work).permit(:title, :description, :material, :size, :weight, { category_ids: [] }, images: [])
   end
 end
