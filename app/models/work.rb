@@ -24,6 +24,9 @@ class Work < ApplicationRecord
 
   has_many :work_categories, dependent: :destroy
   has_many :categories, through: :work_categories
-
   accepts_nested_attributes_for :work_categories, allow_destroy: true
+
+  has_many :author_works, dependent: :destroy
+  has_many :authors, through: :author_works
+  accepts_nested_attributes_for :author_works, allow_destroy: true
 end

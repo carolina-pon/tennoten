@@ -16,4 +16,7 @@
 class Author < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :site, presence: true
+
+  has_many :author_works
+  has_many :works, through: :author_works
 end

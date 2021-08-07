@@ -1,12 +1,23 @@
 @import "semantic-ui";
 
 .swiper-container {
-  height: 300px;
   width: 100%;
-  }
+}
+
+.swiper-slide {
+  width: 100%;
+  max-height: 500px;
+  min-height: 250px;
+}
+  
+.swiper-slide img {
+width: 100%;
+min-height: 250px;
+object-fit: cover;
+}
 
 .background {
-  background-image: image-url('header.png') !important;
+  background-image: image-url('header-img.png') !important;
   height: 200px;
 }
 
@@ -23,10 +34,6 @@
   font-style: normal;
 }
 
-.footer{
+.footer {
   margin-top: 200px;
-}
-
-.bold {
-  font-weight: bold;
 }

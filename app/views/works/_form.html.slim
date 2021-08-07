@@ -2,6 +2,10 @@
     .ui.form.field
       = f.label :title, 'タイトル'
       = f.text_field :title, id: 'works_title'
+    = '作者名'
+    br
+    = collection_check_boxes(:work, :author_ids, Author.all, :id, :name ) do |t|
+      = t.label { t.check_box + t.text }
     .ui.form.field
       = f.label :description, '詳細文'
       = f.text_area :description, id: 'works_description'
