@@ -11,6 +11,8 @@
   .content
     = link_to work_path(work) do
       .ui.header.tennoten= work.title
-    .meta= 'hanako yamada'
+    .meta
+      - work.authors.each do |author|
+        = author.name
 
 = render 'shared/swiper'

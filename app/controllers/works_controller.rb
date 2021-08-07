@@ -47,6 +47,6 @@ class WorksController < ApplicationController
 
   def work_params
     # images:[] とすることで、JSON形式でparamsを受け取れる
-    params.require(:work).permit(:title, :description, :material, :size, :weight, { category_ids: [] }, images: [])
+    params.require(:work).permit(:title, { author_ids: [] }, :description, :material, :size, :weight, { category_ids: [] }, images: [])
   end
 end

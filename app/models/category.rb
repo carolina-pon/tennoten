@@ -14,6 +14,6 @@
 class Category < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
-  has_many :works, through: :work_categories
   has_many :work_categories
+  has_many :works, through: :work_categories
 end
