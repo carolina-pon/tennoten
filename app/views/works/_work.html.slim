@@ -2,15 +2,15 @@
 / 参考 each回さなくても、partialで要素分を表示できる。パフォーマンス◎
 
 .card.five.wide.column
-  .swiper-container
-    .swiper-wrapper
-      - work.images.each do |image|
-        .swiper-slide
-          = image_tag image.url, size: "300x300"
+  =link_to work_path(work) do
+    .swiper-container
+      .swiper-wrapper
+        - work.images.each do |image|
+          .swiper-slide
+            = image_tag image.url, size: "300x300"
     .swiper-pagination
   .content
-    = link_to work_path(work) do
-      .ui.header.tennoten= work.title
+    .ui.header.tennoten= work.title
     .meta
       - work.authors.each do |author|
         = author.name
