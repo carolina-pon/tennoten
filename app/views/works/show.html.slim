@@ -51,7 +51,7 @@
 		.four.wide.column
 			th= '詳細文'
 		.ten.wide.column
-			td= @work.description
+			td= Rinku.auto_link(@work.description, :all, 'target="_blank"').html_safe
 	- if current_user
 		.four.wide.column
 			th
