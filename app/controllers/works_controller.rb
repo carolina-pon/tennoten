@@ -10,7 +10,7 @@ class WorksController < ApplicationController
   end
 
   def create
-    @work = Work.new(work_params)
+    @work = Work.build(work_params)
     if @work.save
       redirect_to works_path, success: '投稿しました'
     else
