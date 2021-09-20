@@ -4,9 +4,9 @@ h1 作者一覧
 table.ui.celled.table
   thead
     tr
-      th= '作者名'
-      th= '拠点'
-      th= 'SNS'
+      th= Author.human_attribute_name(:name)
+      th= Author.human_attribute_name(:site)
+      th= Author.human_attribute_name(:sns)
       th=
       tbody
         = render @authors

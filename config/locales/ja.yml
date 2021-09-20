@@ -1,4 +1,4 @@
-gti ja:
+ja:
   activerecord:
     models:
       user: ユーザー
@@ -22,6 +22,9 @@ gti ja:
         size: 作品サイズ
         title: 作品タイトル
         weight: 重さ
+        work_categories: カテゴリー名
+        author_works: 作者名
+
         
 
 
