@@ -3,7 +3,7 @@
 
 .card.five.wide.column
   =link_to work_path(work) do
-    .swiper-container
+    .swiper
       .swiper-wrapper
         - work.images.each do |image|
           .swiper-slide
@@ -14,5 +14,4 @@
     .meta
       - work.authors.each do |author|
         = author.name
-
 = render 'shared/swiper'
