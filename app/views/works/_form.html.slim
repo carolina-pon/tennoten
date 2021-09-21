@@ -1,32 +1,32 @@
-  = form_with model: @work,local: true do |f|
-    .ui.form.field
-      = f.label :title, 'タイトル'
-      = f.text_field :title, id: 'works_title'
-    = '作者名'
-    br
-    = collection_check_boxes(:work, :author_ids, Author.all, :id, :name ) do |t|
-      = t.label { t.check_box + t.text }
-    .ui.form.field
-      = f.label :description, '詳細文'
-      = f.text_area :description, id: 'works_description'
-    .ui.form.field
-      = f.label :material, '素材'
-      = f.text_field :material, id: 'works_material'
-    .ui.form.field
-      = f.label :size, 'サイズ'
-      = f.text_field :size, id: 'works_size'
-    .ui.form.field
-      = f.label :weight, '重さ'
-      = f.text_field :weight, id: 'works_weight'
-    = 'カテゴリー'
-    br
-    = collection_check_boxes(:work, :category_ids, Category.all, :id, :name ) do |t|
-      = t.label { t.check_box + t.text }
-    .ui.divider
-    = '作品画像'
-    br
-    = f.file_field :images, multiple: true
-    - @work.images.each do |image|
-      = image_tag image.url, size: '100x100'
-    .ui.divider
-    = f.submit '投稿する',class: 'ui primary button'
+	= form_with model: @work,local: true do |f|
+		.ui.form.field
+			= f.label :title
+			= f.text_field :title, id: 'works_title'
+		= f.label :author_works
+		br
+		= collection_check_boxes(:work, :author_ids, Author.all, :id, :name ) do |t|
+			= t.label { t.check_box + t.text }
+		.ui.form.field
+			= f.label :description
+			= f.text_area :description, id: 'works_description'
+		.ui.form.field
+			= f.label :material
+			= f.text_field :material, id: 'works_material'
+		.ui.form.field
+			= f.label :size
+			= f.text_field :size, id: 'works_size'
+		.ui.form.field
+			= f.label :weight
+			= f.text_field :weight, id: 'works_weight'
+		= 'カテゴリー'
+		br
+		= collection_check_boxes(:work, :category_ids, Category.all, :id, :name ) do |t|
+			= t.label { t.check_box + t.text }
+		.ui.divider
+		= f.label :images
+		br
+		= f.file_field :images, multiple: true, accept: 'image/jpg, image/jpeg, image/png, image/gif'
+		- @work.images.each do |image|
+			= image_tag image.url, size: '100x100'
+		.ui.divider
+		= f.submit '投稿する',class: 'ui primary button'

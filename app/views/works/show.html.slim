@@ -6,7 +6,7 @@
 			
 .ui.fluid.image.stackable.grid
   .ui.segment
-	  .swiper-container
+	  .swiper
 	  	.swiper-wrapper
 		  	- @work.images.each do |image|
 			  	.swiper-slide
@@ -15,41 +15,41 @@
 .ui.stackable.vertically.divided.grid
 	.row
 		.four.wide.column
-			th= '作品タイトル'
+			th= Work.human_attribute_name(:title)
 		.ten.wide.column
 			td= @work.title
 	.row
 		.four.wide.column
-			th= '作者名'
+			th= Work.human_attribute_name(:author_works)
 		.ten.wide.column
 			td
 			- @work.authors.each do |author|
 				= author.name
 	.row
 		.four.wide.column
-			th= '素材'
+			th= Work.human_attribute_name(:material)
 		.ten.wide.column
 			td= @work.material
 	.row
 		.four.wide.column
-			th= 'サイズ'
+			th= Work.human_attribute_name(:size)
 		.ten.wide.column
 			td= @work.size
 	.row
 		.four.wide.column
-			th= '重さ'
+			th= Work.human_attribute_name(:weight)
 		.ten.wide.column
 			td= @work.weight
 	.row
 		.four.wide.column
-			th= 'カテゴリー'
+			th= Work.human_attribute_name(:work_categories)
 		.ten.wide.column
 			td
 			- @work.categories.each do |category|
 				= category.name
 	.row
 		.four.wide.column
-			th= '詳細文'
+			th= Work.human_attribute_name(:description)
 		.ten.wide.column
 			td= Rinku.auto_link(@work.description, :all, 'target="_blank"').html_safe
 	- if current_user

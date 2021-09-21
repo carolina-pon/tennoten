@@ -1,1 +1,31 @@
 ja:
+  activerecord:
+    models:
+      user: ユーザー
+      author: 作者
+      category: カテゴリー
+      work: 作品
+    attributes:
+      author:
+        id: ID
+        name: 作者名
+        site: 拠点
+        sns: SNS(URL)
+      category:
+        id: ID
+        name: カテゴリー名
+      work:
+        id : ID
+        description: 詳細文
+        images: 作品画像
+        material: 素材
+        size: 作品サイズ
+        title: 作品タイトル
+        weight: 重さ
+        work_categories: カテゴリー名
+        author_works: 作者名
+
+        
+
+
+        

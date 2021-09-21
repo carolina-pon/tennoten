@@ -1,32 +1,17 @@
 doctype html
 html
-  head
-    title
-      | 点の展オンラインギャラリーサイト
-    meta[name="viewport" content="width=device-width,initial-scale=1.0"]
-    = csrf_meta_tags
-    = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all'
-    = javascript_pack_tag 'application'
-    link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css"
-    link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    javascript:
-      (function(d) {
-        var config = {
-          kitId: 'fbc5afk',
-          scriptTimeout: 3000,
-          async: true
-        },
-        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-      })(document);
-  body
-  - if current_user.nil?
-    = render 'shared/before_login_header'
-  - else
-    = render 'shared/header'
-  - flash.each do |name, msg|
-    = content_tag :div, msg, class: name
-  .ui.container
-    = yield
-    = render 'shared/footer'
-
+	head
+		title
+			| 点の展オンラインギャラリーサイト
+		meta[name="viewport" content="width=device-width,initial-scale=1.0"]
+		= csrf_meta_tags
+		= csp_meta_tag
+		= stylesheet_link_tag 'application', media: 'all'
+		= javascript_pack_tag 'application'
+	body
+	= render 'shared/before_login_header'
+	- flash.each do |name, msg|
+		= content_tag :div, msg, class: name
+	.ui.container
+		= yield
+		= render 'shared/footer'

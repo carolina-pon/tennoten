@@ -1,9 +1,9 @@
 h1 カテゴリー一覧
 = link_to 'カテゴリー追加', new_category_path, class: 'ui primary button'
 table.ui.celled.table
-  thead
-    tr
-      th= 'カテゴリー名'
-      th=
-      tbody
-        = render @categories
+	thead
+		tr
+			th= Category.human_attribute_name(:name)
+			th=
+			tbody
+				= render @categories

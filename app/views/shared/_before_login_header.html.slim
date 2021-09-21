@@ -11,3 +11,6 @@
      i class="large twitter yellow icon"
     = link_to 'https://www.instagram.com/tennoten_/' do
      i class="large instagram yellow icon"
+  - if current_user
+    .item.tennoten.four.wide.column
+      = link_to 'ログアウト', logout_path, method: :delete, class: "tennoten-white"

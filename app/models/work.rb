@@ -10,7 +10,7 @@
 #  title       :string           not null
 #  weight      :string
 #  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+# ul  updated_at  :datetime         not null
 #
 class Work < ApplicationRecord
   mount_uploaders :images, ImageUploader
