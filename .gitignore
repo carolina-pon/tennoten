@@ -36,3 +36,6 @@ yarn-debug.log*
 .yarn-integrity
 /vendor
 config/database.yml
+/memo
+/public/uploads
+/.env

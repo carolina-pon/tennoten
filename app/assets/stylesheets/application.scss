@@ -1,0 +1,53 @@
+@import "semantic-ui";
+
+/* .swiper-slide {
+  width: 100%;
+  max-height: auto;
+  object-fit: cover;
+} */
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.photo-height{
+  height: 800px;
+}
+
+.background {
+  background-image: image-url('header-img.png') !important;
+  height: 220px;
+}
+
+.tennoten {
+  font-family: ten-mincho, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tennoten-white {
+  color: rgb(255, 255, 255) !important;
+  font-family: ten-mincho, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.footer {
+  margin-top: 200px;
+}

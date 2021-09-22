@@ -1,0 +1,16 @@
+.ui.grid.stackable.container.secondary.menu.background
+  .item.four.wide.column
+    h1
+     = link_to '点の展', root_path, class: "tennoten-white"
+  .item.four.wide.column
+    = link_to 'ご挨拶', greetings_path, class: "tennoten-white"
+  .item.four.wide.column
+    = link_to 'オンラインショップ', 'https://tennoten.base.shop/', class: "tennoten-white"
+  .item.four.wide.column
+    = link_to 'https://twitter.com/tennoten_' do
+     i class="large twitter yellow icon"
+    = link_to 'https://www.instagram.com/tennoten_/' do
+     i class="large instagram yellow icon"
+  - if current_user
+    .item.tennoten.four.wide.column
+      = link_to 'ログアウト', logout_path, method: :delete, class: "tennoten-white"

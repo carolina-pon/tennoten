@@ -1,0 +1,17 @@
+/ https://pikawaka.com/rails/partial_template 
+/ 参考 each回さなくても、partialで要素分を表示できる。パフォーマンス◎
+
+.card.five.wide.column
+  =link_to work_path(work) do
+    .swiper
+      .swiper-wrapper
+        - work.images.each do |image|
+          .swiper-slide
+            = image_tag image.url, size: "300x300"
+    .swiper-pagination
+  .content
+    .ui.header.tennoten= work.title
+    .meta
+      - work.authors.each do |author|
+        = author.name
+= render 'shared/swiper'

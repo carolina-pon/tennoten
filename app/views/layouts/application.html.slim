@@ -1,0 +1,17 @@
+doctype html
+html
+	head
+		title
+			| 点の展オンラインギャラリーサイト
+		meta[name="viewport" content="width=device-width,initial-scale=1.0"]
+		= csrf_meta_tags
+		= csp_meta_tag
+		= stylesheet_link_tag 'application', media: 'all'
+		= javascript_pack_tag 'application'
+	body
+	= render 'shared/before_login_header'
+	- flash.each do |name, msg|
+		= content_tag :div, msg, class: name
+	.ui.container
+		= yield
+		= render 'shared/footer'
