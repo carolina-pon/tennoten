@@ -1,5 +1,5 @@
-  = form_with model: @category,local: true do |f|
-    .ui.form.field
-      = f.label :name
-      = f.text_field :name, id: 'catogory_name'
-    = f.submit '投稿する',class: 'ui primary button'
+= form_with model: @category,local: true do |f|
+  .ui.form.field
+    = f.label :name, 'カテゴリー名'
+    = f.text_field :name, id: 'catogory_name'
+  = f.submit '投稿する',class: 'ui primary button'
